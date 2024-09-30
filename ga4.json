@@ -1,0 +1,26 @@
+// copy ui
+{
+  "dimensions": [{ "name": "date" }],
+  "metrics": [{ "name": "active1DayUsers" }],
+  "dateRanges": [{ "startDate": "30daysAgo", "endDate": "yesterday" }]
+},
+
+// mouse copy
+{
+    "dimensions":[
+    {
+    "name":"date"
+    }
+    ]
+    "metrics":[
+    {
+    "name":"active1DayUsers"
+    }
+    ]
+    "dateRanges":[
+    {
+    "startDate":"30daysAgo"
+    "endDate":"yesterday"
+    }
+    ]
+    }

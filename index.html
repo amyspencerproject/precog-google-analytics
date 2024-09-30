@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Precog Source UI</title>
+    <link rel="stylesheet" type="text.css" href="./scss/_normalize.css" />
+    <link rel="stylesheet" href="./scss/main.css" />
+    <link rel="stylesheet" href="./scss/fonts.css" />
+    <link rel="stylesheet" href="./scss/fontawesome-all.css" />
+    <link rel="stylesheet" href="./scss/google.css" />
+  </head>
+  <body>
+    <div class="Page">
+      <div class="PipelineCreatePage">
+        <div class="Container"><h1>Connect to Google Analytics GA4</h1></div>
+        <div class="Container">
+          <div class="SourceAdd">
+            <div class="Group">
+              <button class="Button" type="button">
+                <i class="Icon fas fa-arrow-left"></i>Back
+              </button>
+            </div>
+            <div class="ConnectorForm">
+              <div class="KindForm">
+                <h2>Custom Report Fields</h2>
+                <p>
+                  You can build custom queries to refine the data you access
+                  from the Google Analytics API. Navigate to the
+                  <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                    >GA4 Query Explorer</a
+                  >.
+                </p>
+                <p>
+                  Select the desired Google Analytics Account and Property. In
+                  the 'Set parameters' section ONLY choose Metric and Dimension
+                  parameters. The date range, the advanced options, and the
+                  attribute and filter parameters are not necessary and can
+                  cause issues with API requests from Precog.
+                </p>
+                <p>
+                  After selecting the Metrics and Dimensions you need to verify
+                  that the query request is valid. Click on the Make Request
+                  button and check the Response below. If there are issues you
+                  will be given an error message. Once you are satisfied with
+                  the query response select the 'Show request JSON' option next
+                  to the Make Request button. Copy the JSON query using the copy
+                  icon (right side of dialogue box) to ensure the entire query
+                  is copied. Paste a JSON query for each Custom Report
+                  separately in the fields below.
+                </p>
+
+                <label class="Field"
+                  ><div class="Field-label">Name</div>
+                  <div class="Field-description">
+                    <p>Name of your Google Analytics connection in Precog</p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><label class="Field"
+                    ><div class="Field-label">Start Date</div>
+                    <div class="Field-description">
+                      <p>Start Date in the format YYYY-MM-DD e.g. 2024-10-01</p>
+                    </div>
+                    <input class="Input" type="text" placeholder=""
+                  /></label>
+                  <div class="Field-label">End Date</div>
+                  <div class="Field-description">
+                    <p>End Date in the format YYYY-MM-DD e.g. 2024-10-01</p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Property Id</div>
+                  <div class="Field-description">
+                    <p>
+                      You can find your Property Id by clicking on the
+                      <i class="Icon fas fa-cog"></i>Admin option in the lower
+                      left of the navigation panel. Under Property Settings >
+                      Property, click on Property details. Your Property Id will
+                      be listed on the upper right side. Copy and paste the
+                      Property Id below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder=""
+                /></label>
+                <label class="Field"
+                  ><div class="Field-label">Client Id (optional)</div>
+                  <div class="Field-description">
+                    <p>
+                      Using your own developer credentials is optional and not
+                      recommended for a typical Precog customer. If you choose
+                      this option you will need a Client ID and Client Secret.
+                      Enable the
+                      <a
+                        href="https://console.cloud.google.com/apis/library/analytics.googleapis.com"
+                        >Google Analytics API</a
+                      >
+                      in your Google Cloud console. In the API and Services
+                      Product section, click on + Create Credentials and then
+                      OAuth Client ID. Select Web Application. Name the Web
+                      Client ‘precog’ and add https://precog.cloud (or
+                      https://eu.precog.cloud if required by GDPR) as the
+                      Authorized redirect URI. Click the Create button. Copy the
+                      Client ID and Client Secret in the fields below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder=""
+                /></label>
+                <label class="Field"
+                  ><div class="Field-label">Client Secret (optional)</div>
+                  <div class="Field-description">
+                    <p>Using your own developer Client Secret is optional.</p>
+                  </div>
+                  <input class="Input" type="text" placeholder=""
+                /></label>
+                <label class="Field"
+                  ><div class="Field-label">Custom Report One</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Custom Report Two</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Custom Report Three</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Custom Report Four</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Custom Report Five</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Custom Report Six</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Custom Report Seven</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Custom Report Eight</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Custom Report Nine</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder="" /></label
+                ><label class="Field"
+                  ><div class="Field-label">Custom Report Ten</div>
+                  <div class="Field-description">
+                    <p>
+                      Navigate to the
+                      <a href="https://ga-dev-tools.web.app/ga4/query-explorer"
+                        >GA4 Query Explorer</a
+                      >. Select your Metrics and Dimensions. Copy the JSON query
+                      (below the Make Request button). Use the copy icon to
+                      ensure the entire query is copied. Paste the query below.
+                    </p>
+                  </div>
+                  <input class="Input" type="text" placeholder=""
+                /></label>
+              </div>
+              <div class="Group">
+                <div class="ButtonGroup">
+                  <button class="gsi-material-button" type="button">
+                    <div class="gsi-material-button-state"></div>
+                    <div class="gsi-material-button-content-wrapper">
+                      <div class="gsi-material-button-icon">
+                        <img src="img/google.svg" />
+                      </div>
+                      <span class="gsi-material-button-contents"
+                        >Continue with Google</span
+                      >
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
